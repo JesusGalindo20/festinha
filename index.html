@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festa da Isa e do Luis!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #a8c0ff, #e7c6ff);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #5e548e;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .names {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .name-box {
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
+
+        .isa {
+            background: #f0e6ff;
+            color: #7251b5;
+        }
+
+        .luis {
+            background: #e0f4ff;
+            color: #1d4e89;
+        }
+
+        .details {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        p {
+            color: #4a4a4a;
+            margin: 0.8rem 0;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            background: #9f86c0;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: #b8a7d3;
+        }
+
+        .decorations {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Você está convidado!</h1>
+
+        <div class="names">
+            <div class="name-box isa">Isa 🌸<br>10 anos</div>
+            <div class="name-box luis">Luis 🚀<br>4 anos</div>
+        </div>
+
+        <div class="details">
+            <p>📅 Data: [INSERIR DATA]</p>
+            <p>⏰ Horário: [INSERIR HORÁRIO]</p>
+            <p>📍 Local: [INSERIR LOCAL]</p>
+        </div>
+
+        <p>Vamos comemorar juntos essa data especial cheia de diversão, jogos e guloseimas!</p>
+
+        <button class="cta-button" onclick="confirmarPresenca()">Confirmar Presença</button>
+    </div>
+
+    <div class="decorations">
+        🎈🎉🎂✨
+    </div>
+
+    <script>
+        function confirmarPresenca() {
+            alert("Oba! Ficamos felizes em saber que você virá! 🎉");
+        }
+    </script>
+</body>
+
+</html>
