@@ -7,6 +7,7 @@
     <title>Festa da Isa e do Luis!</title>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -29,7 +30,9 @@
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+            max-width: 800px;
+            width: 100%;
+            margin: 20px;
             text-align: center;
         }
 
@@ -37,7 +40,7 @@
             font-family: 'Pacifico', cursive;
             color: #5e548e;
             margin-bottom: 1.5rem;
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
         }
 
         .names {
@@ -45,12 +48,15 @@
             justify-content: center;
             gap: 1rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .name-box {
-            padding: 1rem;
+            padding: 1rem 2rem;
             border-radius: 10px;
             font-size: 1.2rem;
+            min-width: 150px;
+            flex: 1;
         }
 
         .isa {
@@ -74,18 +80,21 @@
             color: #4a4a4a;
             margin: 0.8rem 0;
             font-weight: 300;
+            line-height: 1.5;
         }
 
         .cta-button {
             background: #9f86c0;
             color: white;
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border: none;
             border-radius: 25px;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             margin-top: 1rem;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .cta-button:hover {
@@ -94,12 +103,100 @@
         }
 
         .decorations {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
+            margin: 1rem 0;
             font-size: 2rem;
             opacity: 0.7;
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 2rem 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            max-width: 100%;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .amenities {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #5e548e;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .map-link {
+            color: #1d4e89;
+            text-decoration: none;
+            display: block;
+            margin: 1rem 0;
+            transition: color 0.3s ease;
+            word-break: break-all;
+        }
+
+        .map-link:hover {
+            color: #14385e;
+            text-decoration: underline;
+        }
+
+        .info-box {
+            background: #fff5f8;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .name-box {
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+            }
+
+            .gallery img {
+                height: 150px;
+            }
+
+            .amenity-item {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -113,26 +210,61 @@
             <div class="name-box luis">Luis 🚀<br>4 anos</div>
         </div>
 
-        <div class="details">
-            <p>📅 Data: [INSERIR DATA]</p>
-            <p>⏰ Horário: [INSERIR HORÁRIO]</p>
-            <p>📍 Local: [INSERIR LOCAL]</p>
+        <div class="decorations">
+            ✨🎉🎂🎈
         </div>
 
-        <p>Vamos comemorar juntos essa data especial cheia de diversão, jogos e guloseimas!</p>
+        <div class="details">
+            <p>📅 Data: 25 de Agosto de 2024</p>
+            <p>⏰ Horário: 14h às 19h</p>
+            <p>📍 Local: Chácara Sonho Encantado</p>
+            <a href="https://maps.app.goo.gl/EXEMPLO" class="map-link" target="_blank">
+                <i class="fas fa-map-marker-alt"></i>
+                Estrada das Flores, 1234 - Campo Verde/MG
+            </a>
+        </div>
 
-        <button class="cta-button" onclick="confirmarPresenca()">Confirmar Presença</button>
+        <div class="amenities">
+            <div class="amenity-item">
+                <i class="fas fa-swimming-pool"></i> Piscina
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-futbol"></i> Quadra
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-child"></i> Pula-Pula
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-ice-cream"></i> Sorvetes
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-music"></i> DJ Kids
+            </div>
+        </div>
+
+        <div class="gallery">
+            <img src="https://images.pexels.com/photos/61129/pexels-photo-61129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Piscina infantil" loading="lazy">
+            <img src="https://images.pexels.com/photos/4964542/pexels-photo-4964542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Pula-pula colorido" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=600"
+                alt="Quadra esportiva" loading="lazy">
+        </div>
+
+        <div class="info-box">
+            <p>🎁 Lista de Presentes:<br>Contribuição para nossa poupança universitária</p>
+            <p>👕 Traje: Roupas confortáveis e traje de banho!</p>
+        </div>
+
+        <a href="https://forms.gle/EXEMPLO" class="cta-button" target="_blank">
+            Confirmar Presença
+        </a>
     </div>
 
-    <div class="decorations">
+    <!-- <div class="decorations">
         🎈🎉🎂✨
-    </div>
+    </div> -->
 
-    <script>
-        function confirmarPresenca() {
-            alert("Oba! Ficamos felizes em saber que você virá! 🎉");
-        }
-    </script>
 </body>
 
 </html>
